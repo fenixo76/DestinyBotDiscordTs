@@ -39,7 +39,6 @@ class Manifest {
             }
         } catch (error) {
             console.error("Error fetching manifest:", error);
-            // Gérer d'autres erreurs ici, par exemple les erreurs de getManifest
         }
     }
 
@@ -59,11 +58,10 @@ class Manifest {
                     return defined;
                 }
             }
-            // Si aucun élément n'est trouvé, vous pouvez choisir de renvoyer une valeur par défaut ou de lancer une nouvelle erreur
             throw new Error("Element not found in manifest");
         } catch (e) {
             console.error("Error finding element in manifest:", e);
-            return hash; // ou null ou une autre valeur par défaut
+            return hash; 
         }
     }
 }
