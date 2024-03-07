@@ -7,7 +7,7 @@ import { string } from "../Modules/ComposantString";
 
 dotenv.config();
 
-const commandIgniore:any = [ // Ajouter ici le Nom des Commands a ignorer
+const commandIgnore:any = [ // Ajouter ici le Nom des Commands a ignorer
     "ada_1",
     "banshee_44",
     "gm",
@@ -211,7 +211,7 @@ export const getUrl:any = async (userId: any, url: any, interaction: any, number
                         MembershipId = row.MembershipId
                         DestinyMembershipId = row.DestinyMembershipId
                         MembershipType = row.MembershipType
-                        if (commandIgniore.includes(interaction.commandName)){
+                        if (commandIgnore.includes(interaction.commandName)){
                             CharacterId = Class[0] || Class[1] || Class[2];
                         } else {
                            CharacterId = Class[number] 
