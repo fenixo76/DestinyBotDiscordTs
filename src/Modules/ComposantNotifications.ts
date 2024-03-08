@@ -25,7 +25,7 @@ export async function notificationCreate(message: any) {
                 .setThumbnail("https://i.imgur.com/lxqK6Vf.png")
 
             const interval = setInterval(() => {
-                sendMessage.send({ content: "<@&804813354493280276>", embeds: [embed] })
+                sendMessage.send({ content: "<@&ROLE_DISCORD>", embeds: [embed] })
                 TableauMessageCommands[message.id].count++
                 if (TableauMessageCommands[message.id].count >= 3) {
                     clearInterval(TableauMessageCommands[message.id].interval)
@@ -33,7 +33,7 @@ export async function notificationCreate(message: any) {
                 }
             }, 10800000)
             TableauMessageCommands[message.id] = { count: 0, interval: interval }
-            sendMessage.send({ content: "<@&804813354493280276>", embeds: [embed] })
+            sendMessage.send({ content: "<@&ROLE_DISCORD>", embeds: [embed] })
         }
 
         if (message.interaction !== null) return
