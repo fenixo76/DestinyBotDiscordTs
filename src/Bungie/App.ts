@@ -9,7 +9,7 @@ export function createServeur() {
     app.use(json());
     app.use(urlencoded({ extended: true }));
 
-    app.listen(PORT, '103.252.88.24', () => {
+    app.listen(PORT, '000.000.000.000', () => {
         console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
     });
 
