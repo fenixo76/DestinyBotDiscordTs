@@ -28,7 +28,12 @@ export const command: SlashCommand = {
             const localisation = await manifest.t(localisationHash) //Localisation de Ada_1
 
             page.push(
-                { title: "Ada_1", thumbnail: `https://www.bungie.net/${manifestXûr.displayProperties.icon}`, description: `Bonjour, je suis actuellement sur :\n__${localisation.displayProperties.name}__ `, image: `https://www.bungie.net/${manifestXûr.displayProperties.largeIcon}`, fields: { name: "Navigation:", value: "Pour voir mes articles, appuyez sur les boutons ci-dessous.", inline: true }, id: 1, },
+                { title: "Ada_1", 
+                 thumbnail: `https://www.bungie.net/${manifestXûr.displayProperties.icon}`, 
+                 description: `Bonjour, je suis actuellement sur :\n__${localisation.displayProperties.name}__ `, 
+                 image: `https://www.bungie.net/${manifestXûr.displayProperties.largeIcon}`, 
+                 fields: { name: "Navigation:", value: "Pour voir mes articles, appuyez sur les boutons ci-dessous.", inline: true }, 
+                 id: 1, },
             )
 
             let id = 2
