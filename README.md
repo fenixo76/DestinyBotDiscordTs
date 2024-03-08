@@ -73,7 +73,7 @@ Chemin d'accès : etc/apache2/site-enbled
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-
+```
 2. **000-default.conf**
 ```apache
 <VirtualHost *:80>
@@ -101,8 +101,7 @@ Chemin d'accès : etc/apache2/site-enbled
     RewriteEngine On
     RewriteRule ^/Pages/Succes.html$ http://VOTRE_IP_VPS:3000/Pages/Succes.html [P,L]
 </VirtualHost>
-
-
+```
 ## Configuration fichier App.ts
 Dans le fichier App.ts modifié juste ip : 0.0.0.0 par l'ip de votre vps.
 ```bash
