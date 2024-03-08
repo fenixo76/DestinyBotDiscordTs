@@ -17,7 +17,7 @@ export const nameCommandIgniore:any = [ // Ajouter ici le Nom des Commands a ign
 ]
 
 export const ignoreUsers = () => {
-    return ("Orphibot V2" /** "Nom du Bot" */).split(",");
+    return (/** "Nom du Bot" */).split(",");
 };
 
 const emojiTable: EmojiItem[] = [
