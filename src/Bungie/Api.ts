@@ -225,7 +225,7 @@ export const getUrl:any = async (userId: any, url: any, interaction: any, number
                         .setColor("#FF00D8")
                         .setTitle("Connexion")
                         .setThumbnail(`https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}`)
-                        .setDescription(`Il semble que tu ne t'es pas connecté.\n\nConnecte-toi au site : [Orphidia](https://www.bungie.net/en/OAuth/Authorize?response_type=code&client_id=${process.env.BUNGIE_OAUTH_CLIENT_ID}) Pour avoir accès aux commandes Destiny du serveur.\n\nVous avez 20 Seconde pour vous connecté`)
+                        .setDescription(`Il semble que tu ne t'es pas connecté.\n\nConnecte-toi au site : [NOM_DE_VOTRE_SITE](https://www.bungie.net/en/OAuth/Authorize?response_type=code&client_id=${process.env.BUNGIE_OAUTH_CLIENT_ID}) Pour avoir accès aux commandes Destiny du serveur.\n\nVous avez 20 Seconde pour vous connecté`)
                         
                         interaction.editReply({embeds: [embed]})
 
