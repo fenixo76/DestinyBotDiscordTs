@@ -57,7 +57,7 @@ Chemin d'accès : etc/apache2/site-enbled
 
 1. default-ssl.conf
    ```bash
-<VirtualHost _default_:443>
+< VirtualHost _default_ : 443 >
 	ServerAdmin webmaster@localhost
 	ServerName NOM_DE_VOTE_SITE
 	DocumentRoot /var/www/html
@@ -71,20 +71,20 @@ Chemin d'accès : etc/apache2/site-enbled
     	SSLCipherSuite HIGH:!aNULL:!MD5
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+< / VirtualHost >
 
 2. 000-default.conf
    ```bash
-<VirtualHost *:80>
+< VirtualHost * : 80 >
 	ServerAdmin webmaster@localhost
 	ServerName NOM_DE_VOTE_SITE
 	DocumentRoot /var/www/html
 
         RewriteEngine On
         RewriteRule ^/Pages/Succes.html$ http://VOTRE_IP_VPS:3000/Pages/Succes.html [P,L]
-</VirtualHost>
+< / VirtualHost >
 
-<VirtualHost *:443>
+ < VirtualHost * : 443 >
 	ServerAdmin webmaster@localhost
 	ServerName NOM_DE_VOTE_SITE
 	DocumentRoot /var/www/html
@@ -98,7 +98,7 @@ Chemin d'accès : etc/apache2/site-enbled
 
 	RewriteEngine On
 	RewriteRule ^/Pages/Succes.html$ http://VOTRE_IP_VPS:3000/Pages/Succes.html [P,L]
-</VirtualHost>
+< / VirtualHost >
 
 ## Configuration fichier App.ts
 Dans le fichier App.ts modifié juste ip : 0.0.0.0 par l'ip de votre vps.
