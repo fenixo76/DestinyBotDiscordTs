@@ -56,7 +56,6 @@ Personnellement j'utilise un vps où j'héberge mon site et mon bot pour que les
 Chemin d'accès : etc/apache2/site-enbled
 
 1. default-ssl.conf
-   ```bash
 < VirtualHost _default_ : 443 >
 	ServerAdmin webmaster@localhost
 	ServerName NOM_DE_VOTE_SITE
@@ -74,7 +73,6 @@ Chemin d'accès : etc/apache2/site-enbled
 < / VirtualHost >
 
 2. 000-default.conf
-   ```bash
 < VirtualHost * : 80 >
 	ServerAdmin webmaster@localhost
 	ServerName NOM_DE_VOTE_SITE
