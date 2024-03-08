@@ -21,7 +21,7 @@ export async function userSelectMenuInteraction(interaction: any) {
             .setColor("#FF00D8")
             .setTitle(`Qui veut faire  ${interaction.values[0]}` + `\n🗓 ${userMessage[0].optionDate.charAt(0).toUpperCase() + userMessage[0].optionDate.slice(1, 999).toLowerCase()} a ${userMessage[0].optionHeur} Heure ${userMessage[0].optionMinute}`)
             .setThumbnail(`https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}`)
-            .setDescription("<@&804813354493280276> Pour voter, veuillez appuyer sur les emojis.")
+            .setDescription("<@&ROLE_DISCORD> Pour voter, veuillez appuyer sur les emojis.")
             .setFields(
                 { name: "Votez avec 👍", value: "Pour (oui)", inline: true },
                 { name: "Votez avec 👎", value: "Pour (Non)", inline: true }
