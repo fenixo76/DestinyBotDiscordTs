@@ -55,48 +55,53 @@ Personnellement j'utilise un vps où j'héberge mon site et mon bot pour que les
 
 Chemin d'accès : etc/apache2/site-enbled
 
-1. default-ssl.conf
-< VirtualHost _default_ : 443 >
-	ServerAdmin webmaster@localhost
-	ServerName NOM_DE_VOTE_SITE
-	DocumentRoot /var/www/html
+1. **default-ssl.conf**
+```apache
+<VirtualHost _default_:443>
+    ServerAdmin webmaster@localhost
+    ServerName NOM_DE_VOTRE_SITE
+    DocumentRoot /var/www/html
 
-    	SSLEngine on
-    	SSLCertificateFile /var/www/html/pem/VOTRE_CERTIFICAT.cer
-    	SSLCertificateKeyFile /var/www/html/pem/VOTRE_CERTIFICAT_KEY.key
-    	SSLCertificateChainFile /var/www/html/pem/VOTRE_CERTIFICAT_INTERMEDIAIRE.cer
+    SSLEngine on
+    SSLCertificateFile /var/www/html/pem/VOTRE_CERTIFICAT.cer
+    SSLCertificateKeyFile /var/www/html/pem/VOTRE_CERTIFICAT_KEY.key
+    SSLCertificateChainFile /var/www/html/pem/VOTRE_CERTIFICAT_INTERMEDIAIRE.cer
 
-    	SSLProtocol all -SSLv2 -SSLv3
-    	SSLCipherSuite HIGH:!aNULL:!MD5
-	ErrorLog ${APACHE_LOG_DIR}/error.log
-	CustomLog ${APACHE_LOG_DIR}/access.log combined
-< / VirtualHost >
+    SSLProtocol all -SSLv2 -SSLv3
+    SSLCipherSuite HIGH:!aNULL:!MD5
 
-2. 000-default.conf
-< VirtualHost * : 80 >
-	ServerAdmin webmaster@localhost
-	ServerName NOM_DE_VOTE_SITE
-	DocumentRoot /var/www/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
 
-        RewriteEngine On
-        RewriteRule ^/Pages/Succes.html$ http://VOTRE_IP_VPS:3000/Pages/Succes.html [P,L]
-< / VirtualHost >
+2. **000-default.conf**
+```apache
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName NOM_DE_VOTRE_SITE
+    DocumentRoot /var/www/html
 
- < VirtualHost * : 443 >
-	ServerAdmin webmaster@localhost
-	ServerName NOM_DE_VOTE_SITE
-	DocumentRoot /var/www/html
+    RewriteEngine On
+    RewriteRule ^/Pages/Succes.html$ http://VOTRE_IP_VPS:3000/Pages/Succes.html [P,L]
+</VirtualHost>
 
-	SSLEngine on
-    	SSLCertificateFile /var/www/html/pem/VOTRE_CERTIFICAT.cer
-    	SSLCertificateKeyFile /var/www/html/pem/VOTRE_CERTIFICAT_KEY.key
-    	SSLCertificateChainFile /var/www/html/pem/VOTRE_CERTIFICAT_INTERMEDIAIRE.cer
-	ErrorLog ${APACHE_LOG_DIR}/error.log
-	CustomLog ${APACHE_LOG_DIR}/access.log combined
+<VirtualHost *:443>
+    ServerAdmin webmaster@localhost
+    ServerName NOM_DE_VOTRE_SITE
+    DocumentRoot /var/www/html
 
-	RewriteEngine On
-	RewriteRule ^/Pages/Succes.html$ http://VOTRE_IP_VPS:3000/Pages/Succes.html [P,L]
-< / VirtualHost >
+    SSLEngine on
+    SSLCertificateFile /var/www/html/pem/VOTRE_CERTIFICAT.cer
+    SSLCertificateKeyFile /var/www/html/pem/VOTRE_CERTIFICAT_KEY.key
+    SSLCertificateChainFile /var/www/html/pem/VOTRE_CERTIFICAT_INTERMEDIAIRE.cer
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    RewriteEngine On
+    RewriteRule ^/Pages/Succes.html$ http://VOTRE_IP_VPS:3000/Pages/Succes.html [P,L]
+</VirtualHost>
+
 
 ## Configuration fichier App.ts
 Dans le fichier App.ts modifié juste ip : 0.0.0.0 par l'ip de votre vps.
