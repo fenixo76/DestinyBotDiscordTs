@@ -1,6 +1,6 @@
 # Bot Discord Destiny 2 Ts
 
-Un bot Discord comuniquant avec l'api de bungie pour Destiny 2. Vous n'avez qu'à rentrer les paramete demander (TOKKEN,CLIENT_ID ect...) dans le fichier `.env` et c'est parti. 
+Un bot Discord communiquant avec l'API de Bungie pour Destiny 2. Vous n'avez qu'à entrer les paramètres demandés. (TOKKEN,CLIENT_ID ect...) dans le fichier `.env` et c'est parti. 
 Pour créer d'autres commandes ajoutez des fichiers dans le dossier `Commands`. Laissez libre cours à votre imagination !
 
 ## Table des matières
@@ -17,7 +17,7 @@ Pour installer ce projet sur votre machine locale, suivez les étapes ci-dessous
 
 1. Cloner ce dépôt :
    ```bash
-   git clone https://github.com/fenixo76/BotDiscordTs.git
+   git clone https://github.com/fenixo76/DestinyBotDiscordTs.git
    
 2. Installer les dépendances :
    ```bash
