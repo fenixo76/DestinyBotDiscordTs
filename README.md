@@ -57,10 +57,9 @@ Chemin d'accès : etc/apache2/site-enbled
 
 - default-ssl.conf
 <VirtualHost _default_:443>
-
-		ServerAdmin webmaster@localhost
-		ServerName NOM_DE_VOTE_SITE
-		DocumentRoot /var/www/html
+	ServerAdmin webmaster@localhost
+	ServerName NOM_DE_VOTE_SITE
+	DocumentRoot /var/www/html
 
     	SSLEngine on
     	SSLCertificateFile /var/www/html/pem/VOTRE_CERTIFICAT.cer
@@ -69,35 +68,34 @@ Chemin d'accès : etc/apache2/site-enbled
 
     	SSLProtocol all -SSLv2 -SSLv3
     	SSLCipherSuite HIGH:!aNULL:!MD5
-		ErrorLog ${APACHE_LOG_DIR}/error.log
-		CustomLog ${APACHE_LOG_DIR}/access.log combined
-
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 
 - 000-default.conf
 <VirtualHost *:80>
-	   ServerAdmin webmaster@localhost
-      ServerName NOM_DE_VOTE_SITE
-	   DocumentRoot /var/www/html
+	ServerAdmin webmaster@localhost
+	ServerName NOM_DE_VOTE_SITE
+	DocumentRoot /var/www/html
 
         RewriteEngine On
         RewriteRule ^/Pages/Succes.html$ http://VOTRE_IP_VPS:3000/Pages/Succes.html [P,L]
 </VirtualHost>
-<VirtualHost *:443>
-    ServerAdmin webmaster@localhost
-    ServerName NOM_DE_VOTE_SITE
-    DocumentRoot /var/www/html
 
-    	SSLEngine on
+<VirtualHost *:443>
+	ServerAdmin webmaster@localhost
+	ServerName NOM_DE_VOTE_SITE
+	DocumentRoot /var/www/html
+
+	SSLEngine on
     	SSLCertificateFile /var/www/html/pem/VOTRE_CERTIFICAT.cer
     	SSLCertificateKeyFile /var/www/html/pem/VOTRE_CERTIFICAT_KEY.key
     	SSLCertificateChainFile /var/www/html/pem/VOTRE_CERTIFICAT_INTERMEDIAIRE.cer
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-    RewriteEngine On
-    RewriteRule ^/Pages/Succes.html$ http://VOTRE_IP_VPS:3000/Pages/Succes.html [P,L]
-
+	RewriteEngine On
+	RewriteRule ^/Pages/Succes.html$ http://VOTRE_IP_VPS:3000/Pages/Succes.html [P,L]
 </VirtualHost>
 
 ## Configuration fichier App.ts
